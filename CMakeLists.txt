@@ -1,6 +1,11 @@
 # Project needs a name
 project(lornix_cpu_temp)
 
+execute_process(COMMAND kde4-config --localprefix
+                OUTPUT_VARIABLE prefixdir
+                OUTPUT_STRIP_TRAILING_WHITESPACE)
+set(CMAKE_INSTALL_PREFIX ${prefixdir})
+
 # Find the required Libaries
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
@@ -25,3 +30,5 @@ install(TARGETS plasma-applet-lornix_cpu_temp
 
 install(FILES plasma-applet-lornix_cpu_temp.desktop
     DESTINATION ${SERVICES_INSTALL_DIR})
+
+install(CODE "execute_process(COMMAND kbuildsycoca4)")
