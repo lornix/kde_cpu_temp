@@ -1,9 +1,3 @@
-# cmake project file
-execute_process(COMMAND kde4-config --localprefix
-                OUTPUT_VARIABLE prefixdir)
-
-set(CMAKE_INSTALL_PREFIX ${prefixdir})
-
 # Project needs a name
 project(lornix_cpu_temp)
 
