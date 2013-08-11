@@ -17,12 +17,12 @@ const char* GREEN="green";
 const char* YELLOW="yellow";
 const char* RED="red";
 
-class lornix_cpu_temp : public Plasma::Applet
+class cpu_temp : public Plasma::Applet
 {
     Q_OBJECT
  public:
-        lornix_cpu_temp(QObject* parent,const QVariantList &args);
-        ~lornix_cpu_temp();
+        cpu_temp(QObject* parent,const QVariantList &args);
+        ~cpu_temp();
         void init();
  private:
         Plasma::Label* label;
@@ -32,13 +32,13 @@ class lornix_cpu_temp : public Plasma::Applet
         void updateLabel();
 };
 
-    lornix_cpu_temp::lornix_cpu_temp(QObject* parent,const QVariantList &args)
+    cpu_temp::cpu_temp(QObject* parent,const QVariantList &args)
 : Plasma::Applet(parent,args)
 {
     setBackgroundHints(DefaultBackground);
     resize(60,30);
 }
-lornix_cpu_temp::~lornix_cpu_temp()
+cpu_temp::~cpu_temp()
 {
     if (hasFailedToLaunch()) {
         // do cleanup here
@@ -47,7 +47,7 @@ lornix_cpu_temp::~lornix_cpu_temp()
         // save settings
     }
 }
-void lornix_cpu_temp::init()
+void cpu_temp::init()
 {
     layout=new QGraphicsLinearLayout(this);
     layout->setOrientation(Qt::Horizontal);
@@ -60,7 +60,7 @@ void lornix_cpu_temp::init()
     connect(timer,SIGNAL(timeout()),SLOT(updateLabel()));
     timer->start(1000);
 }
-void lornix_cpu_temp::updateLabel()
+void cpu_temp::updateLabel()
 {
 #define BUFSIZE 200
     static char buf[BUFSIZE];
@@ -102,6 +102,6 @@ void lornix_cpu_temp::updateLabel()
     label->setText(buf);
 }
 
-K_EXPORT_PLASMA_APPLET(cputemp,lornix_cpu_temp)
+K_EXPORT_PLASMA_APPLET(cputemp,cpu_temp)
 
-#include "lornix_cpu_temp.moc"
+#include "cpu_temp.moc"

@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Lornix CPU Temperature
+Name=CPU Temperature
 Comment=Shows CPU Temperature
 Type=Service
 ServiceTypes=Plasma/Applet
-X-KDE-Library=plasma-applet-lornix_cpu_temp
-X-KDE-PluginInfo-Name=lornix_cpu_temp
+X-KDE-Library=plasma-applet-cpu_temp
+X-KDE-PluginInfo-Name=cpu_temp
 X-KDE-PluginInfo-Category=Utilities
 X-KDE-PluginInfo-Author=Loni Nix
 X-KDE-PluginInfo-Email=lornix@lornix.com
